@@ -45,7 +45,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[])
 {
    int i, bucket;
    FILE *fp;
-   char word[LENGTH];
+   char*  word;
 
    //Initialize hash table
    for (i = 0; i < HASH_SIZE; i++)
