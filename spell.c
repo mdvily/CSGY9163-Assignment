@@ -1,4 +1,10 @@
 #include <stdlib.h>
+#include <dictionary.h>
+#include <stdbool.h>
+#include <string.h>
+#include <stdio.h>
+#include <ctype.h>
+
 
 bool check_word(const char* word, hashmap_t hashtable[])
 {
