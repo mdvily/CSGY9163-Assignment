@@ -9,7 +9,7 @@
 bool check_word(const char* word, hashmap_t hashtable[])
 {
    int bucket = hash_function(word);
-   hashmap_t cursor = hashmap[bucket];
+   hashmap_t cursor = hashtable[bucket];
 
    while (cursor != NULL)
    {
@@ -21,7 +21,7 @@ bool check_word(const char* word, hashmap_t hashtable[])
    }
    
    bucket = hash_function(word);
-   cursor = hashmap[bucket];
+   cursor = hashtable[bucket];
 
    while(cursor != NULL)
    {
@@ -103,7 +103,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[])
          word = strtok(NULL, " ");
       }
       //Get next line
-      line_size = getline(&line, &line_buf_size, fp)
+      line_size = getline(&line, &line_buf_size, fp);
    }
 
    //Clean up
