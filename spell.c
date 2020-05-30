@@ -23,9 +23,15 @@ bool check_word(const char* word, hashmap_t hashtable[])
    bucket = hash_function(word);
    cursor = hashtable[bucket];
 
+   //Convert string to lower case. Reference: https://stackoverflow.com/questions/2661766/how-do-i-lowercase-a-string-in-c/2661788
+   for(int i = 0; word[i]; i++)
+   {
+      word[i] = tolower(word[i]);
+   }
+
    while(cursor != NULL)
    {
-      if (tolower(word) == cursor->word)
+      if (word == cursor->word)
       {
          return true;
       }
