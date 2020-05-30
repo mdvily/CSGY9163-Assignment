@@ -66,7 +66,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[])
    {
       hashmap_t new_node;
       new_node->next = NULL;
-      new_node->word = word;
+      strcpy(new_node->word, word); //Source: https://www.programiz.com/c-programming/library-function/string.h/strcpy
       bucket = hash_function(word);
       if (hashtable[bucket] == NULL)
       {
