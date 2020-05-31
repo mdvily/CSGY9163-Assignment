@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <ctype.h>
 
-
 bool check_word(const char* word, hashmap_t hashtable[])
 {
    int bucket = hash_function(word);

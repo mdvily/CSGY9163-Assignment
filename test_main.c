@@ -2,6 +2,7 @@
 #include "dictionary.h"
 #include <stdlib.h>
 
+
 #define DICTIONARY "wordlist.txt"
 #define TESTDICT "test_worlist.txt"
 
