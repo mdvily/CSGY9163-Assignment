@@ -7,36 +7,41 @@
 
 bool check_word(const char* word, hashmap_t hashtable[])
 {
+   int i = 0;
    int bucket = hash_function(word);
    hashmap_t cursor = hashtable[bucket];
-   char* lowercase_word;
-   
+
+   char lowercase_word[strlen(word)];
+
    while (cursor != NULL)
    {
-      if (word == cursor->word)
+      if (!strcmp(word, cursor->word))
       {
          return true;
       }
       cursor = cursor->next;
    }
-   
-   bucket = hash_function(word);
-   cursor = hashtable[bucket];
+ 
 
    //Convert string to lower case. Reference: https://stackoverflow.com/questions/2661766/how-do-i-lowercase-a-string-in-c/2661788
-   for(int i = 0; word[i]; i++)
+   for(i = 0; i < strlen(word); i++)
    {
       lowercase_word[i] = tolower(word[i]);
    }
+   lowercase_word[i] = '\0';
+   
+   bucket = hash_function(lowercase_word);
+   cursor = hashtable[bucket];
 
    while(cursor != NULL)
    {
-      if (lowercase_word == cursor->word)
+      if (!strcmp(lowercase_word, cursor->word))
       {
          return true;
       }
       cursor = cursor->next;
    }
+   
    return false;
 }
 
@@ -44,7 +49,8 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[])
 {
    int i, bucket;
    FILE *fp;
-   char*  word;
+   //char*  word;
+   char word[1024];
 
    //Initialize hash table
    for (i = 0; i < HASH_SIZE; i++)
@@ -58,18 +64,17 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[])
       return false;
    }
    
-   //Read one word from dictionary file at a time
-   fscanf(fp, "%s", word);
-   
-   while(word != EOF)
+   //Source reference for fscanf use: https://stackoverflow.com/questions/16400886/reading-from-a-file-word-by-word
+   while(fscanf(fp, " %1023s", word) == 1)
    {
-      hashmap_t new_node;
+      hashmap_t new_node = malloc(sizeof(node));
       new_node->next = NULL;
       strcpy(new_node->word, word); //Source: https://www.programiz.com/c-programming/library-function/string.h/strcpy
       bucket = hash_function(word);
       if (hashtable[bucket] == NULL)
       {
          hashtable[bucket] = new_node;
+	 new_node->next = NULL;
       }
       else
       {
@@ -83,6 +88,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[])
 
 int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[])
 {
+   int test;
    int num_misspelled = 0;
    //Source reference for getline() usage: https://riptutorial.com/c/example/8274/get-lines-from-a-file-using-getline--
    char* line = NULL;
@@ -93,11 +99,11 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[])
    //Get the first line
    line_size = getline(&line, &line_buf_size, fp);
 
+   word = strtok(line, " .,?!-\n");
    //Loop through the file
-   while(line != EOF)
+   while(line_size >= 0)
    {
       //Source reference for use of strtok(): https://stackoverflow.com/questions/4513316/split-string-in-c-every-white-space
-      word = strtok(line, " ");
       while (word != NULL)
       {
          //TO DO: Remove punctuation from beginning and end of word
@@ -106,9 +112,10 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[])
 	    misspelled[num_misspelled] = word;
 	    num_misspelled++;
          }
-         word = strtok(NULL, " ");
+         word = strtok(NULL, " .,?!-\n");
       }
       //Get next line
+      line = NULL;
       line_size = getline(&line, &line_buf_size, fp);
    }
 
