@@ -29,11 +29,11 @@ int main(int argc, char **argv) {
     int num_misspelled = check_words(fp, hashtable, misspelled);
     
     printf("\nNumber of misspelled words: %d\n\n", num_misspelled);
-
+    printf("\nMisspelled words: \n");
     for (int i = 0; i < num_misspelled; i++)
     {
        printf("\n%s", misspelled[i]);
     }    
-
+    printf("\n\n");
     return 0;
 }

@@ -83,6 +83,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[])
       }
    }
    fclose(fp);
+   //free(new_node);
 }
 
 

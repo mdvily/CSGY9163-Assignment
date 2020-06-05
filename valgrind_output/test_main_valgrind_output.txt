@@ -1,0 +1,563 @@
+# valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes --track-origins=yes ./test_main 
+
+
+==18257== Memcheck, a memory error detector
+==18257== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18257== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==18257== Command: ./test_main
+==18257== 
+Running suite(s): check_word
+==18258== 
+==18258== FILE DESCRIPTORS: 4 open at exit.
+==18258== Open file descriptor 3: ./check_FGjTwC
+==18258==    at 0x4B0EDDE: open (open64.c:47)
+==18258==    by 0x4A91E12: __gen_tempname (tempname.c:261)
+==18258==    by 0x4034B5: open_tmp_file (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40355B: setup_pipe (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x404700: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== Open file descriptor 2: /dev/pts/1
+==18258==    <inherited from parent>
+==18258== 
+==18258== Open file descriptor 1: /dev/pts/1
+==18258==    <inherited from parent>
+==18258== 
+==18258== Open file descriptor 0: /dev/pts/1
+==18258==    <inherited from parent>
+==18258== 
+==18258== 
+==18258== HEAP SUMMARY:
+==18258==     in use at exit: 6,897,212 bytes in 123,171 blocks
+==18258==   total heap usage: 123,187 allocs, 16 frees, 6,907,225 bytes allocated
+==18258== 
+==18258== 8 bytes in 1 blocks are still reachable in loss record 1 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40236B: suite_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DB7: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 8 bytes in 1 blocks are still reachable in loss record 2 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x402524: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 8 bytes in 1 blocks are still reachable in loss record 3 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40252D: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 8 bytes in 1 blocks are still reachable in loss record 4 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x402536: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 8 bytes in 1 blocks are still reachable in loss record 5 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40253F: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 8 bytes in 1 blocks are still reachable in loss record 6 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40298A: srunner_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E61: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 8 bytes in 1 blocks are still reachable in loss record 7 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x4029C4: srunner_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E61: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 8 bytes in 1 blocks are still reachable in loss record 8 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x405D8F: srunner_init_logging (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40470D: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 12 bytes in 1 blocks are still reachable in loss record 9 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x4029A7: srunner_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E61: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 16 bytes in 1 blocks are still reachable in loss record 10 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x402352: suite_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DB7: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 16 bytes in 1 blocks are still reachable in loss record 11 of 29
+==18258==    at 0x4837D7B: realloc (vg_replace_malloc.c:836)
+==18258==    by 0x402FA8: erealloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x402FF5: maybe_grow (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x4030A5: check_list_add_end (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E27: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 24 bytes in 1 blocks are still reachable in loss record 12 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40236B: suite_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DB7: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 24 bytes in 1 blocks are still reachable in loss record 13 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40251B: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 24 bytes in 1 blocks are still reachable in loss record 14 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x402524: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 24 bytes in 1 blocks are still reachable in loss record 15 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40252D: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 24 bytes in 1 blocks are still reachable in loss record 16 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x402536: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 24 bytes in 1 blocks are still reachable in loss record 17 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40253F: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 24 bytes in 1 blocks are still reachable in loss record 18 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40298A: srunner_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E61: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 24 bytes in 1 blocks are still reachable in loss record 19 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x4029C4: srunner_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E61: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 24 bytes in 1 blocks are still reachable in loss record 20 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x405D8F: srunner_init_logging (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40470D: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 24 bytes in 1 blocks are still reachable in loss record 21 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x405B45: srunner_register_lfun (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x405DB7: srunner_init_logging (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40470D: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 32 bytes in 1 blocks are still reachable in loss record 22 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x402617: _tcase_add_test (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DF6: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 32 bytes in 1 blocks are still reachable in loss record 23 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x402617: _tcase_add_test (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E27: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 64 bytes in 1 blocks are still reachable in loss record 24 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x402412: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 64 bytes in 1 blocks are still reachable in loss record 25 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x402982: srunner_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E61: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 168 bytes in 3 blocks are possibly lost in loss record 26 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x4020C7: load_dictionary (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401AC2: test_check_word_normal (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x404EB5: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 552 bytes in 1 blocks are still reachable in loss record 27 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x4A944BB: fdopen@@GLIBC_2.2.5 (iofdopen.c:122)
+==18258==    by 0x4034C7: open_tmp_file (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x40355B: setup_pipe (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x404700: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 6,790,392 bytes in 121,257 blocks are indirectly lost in loss record 28 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x4020C7: load_dictionary (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401AC2: test_check_word_normal (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x404EB5: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== 6,895,952 (105,560 direct, 6,790,392 indirect) bytes in 1,885 blocks are definitely lost in loss record 29 of 29
+==18258==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18258==    by 0x4020C7: load_dictionary (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401AC2: test_check_word_normal (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x404EB5: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18258== 
+==18258== LEAK SUMMARY:
+==18258==    definitely lost: 105,560 bytes in 1,885 blocks
+==18258==    indirectly lost: 6,790,392 bytes in 121,257 blocks
+==18258==      possibly lost: 168 bytes in 3 blocks
+==18258==    still reachable: 1,092 bytes in 26 blocks
+==18258==         suppressed: 0 bytes in 0 blocks
+==18258== 
+==18258== For lists of detected and suppressed errors, rerun with: -s
+==18258== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==18259== 
+==18259== FILE DESCRIPTORS: 4 open at exit.
+==18259== Open file descriptor 3: ./check_n5Nhq9
+==18259==    at 0x4B0EDDE: open (open64.c:47)
+==18259==    by 0x4A91E12: __gen_tempname (tempname.c:261)
+==18259==    by 0x4034B5: open_tmp_file (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40355B: setup_pipe (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x4035BC: receive_test_result (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x404B41: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== Open file descriptor 2: /dev/pts/1
+==18259==    <inherited from parent>
+==18259== 
+==18259== Open file descriptor 1: /dev/pts/1
+==18259==    <inherited from parent>
+==18259== 
+==18259== Open file descriptor 0: /dev/pts/1
+==18259==    <inherited from parent>
+==18259== 
+==18259== 
+==18259== HEAP SUMMARY:
+==18259==     in use at exit: 6,897,407 bytes in 123,175 blocks
+==18259==   total heap usage: 123,211 allocs, 36 frees, 6,925,357 bytes allocated
+==18259== 
+==18259== 7 bytes in 1 blocks are still reachable in loss record 1 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x40403D: pass_msg (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x404CAA: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 8 bytes in 1 blocks are still reachable in loss record 2 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40236B: suite_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DB7: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 8 bytes in 1 blocks are still reachable in loss record 3 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x402524: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 8 bytes in 1 blocks are still reachable in loss record 4 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40252D: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 8 bytes in 1 blocks are still reachable in loss record 5 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x402536: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 8 bytes in 1 blocks are still reachable in loss record 6 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40253F: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 8 bytes in 1 blocks are still reachable in loss record 7 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40298A: srunner_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E61: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 8 bytes in 1 blocks are still reachable in loss record 8 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x4029C4: srunner_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E61: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 8 bytes in 1 blocks are still reachable in loss record 9 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x403024: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x405D8F: srunner_init_logging (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40470D: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 12 bytes in 1 blocks are still reachable in loss record 10 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x4029A7: srunner_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E61: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 12 bytes in 1 blocks are still reachable in loss record 11 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x4AACEF9: strdup (strdup.c:42)
+==18259==    by 0x403F58: punpack (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x4035A6: receive_test_result (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x404B41: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 16 bytes in 1 blocks are still reachable in loss record 12 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x402352: suite_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DB7: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 16 bytes in 1 blocks are still reachable in loss record 13 of 33
+==18259==    at 0x4837D7B: realloc (vg_replace_malloc.c:836)
+==18259==    by 0x402FA8: erealloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x402FF5: maybe_grow (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x4030A5: check_list_add_end (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E27: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 24 bytes in 1 blocks are still reachable in loss record 14 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40236B: suite_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DB7: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 24 bytes in 1 blocks are still reachable in loss record 15 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40251B: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 24 bytes in 1 blocks are still reachable in loss record 16 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x402524: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 24 bytes in 1 blocks are still reachable in loss record 17 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40252D: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 24 bytes in 1 blocks are still reachable in loss record 18 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x402536: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 24 bytes in 1 blocks are still reachable in loss record 19 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40253F: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 24 bytes in 1 blocks are still reachable in loss record 20 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40298A: srunner_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E61: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 24 bytes in 1 blocks are still reachable in loss record 21 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x4029C4: srunner_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E61: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 24 bytes in 1 blocks are still reachable in loss record 22 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40300A: check_list_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x405D8F: srunner_init_logging (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40470D: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 24 bytes in 1 blocks are still reachable in loss record 23 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x405B45: srunner_register_lfun (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x405DB7: srunner_init_logging (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40470D: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 32 bytes in 1 blocks are still reachable in loss record 24 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x402617: _tcase_add_test (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DF6: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 32 bytes in 1 blocks are still reachable in loss record 25 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x402617: _tcase_add_test (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E27: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 56 bytes in 1 blocks are still reachable in loss record 26 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x402B1D: tr_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x4035C1: receive_test_result (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x404B41: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 64 bytes in 1 blocks are still reachable in loss record 27 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x402412: tcase_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401DC5: check_word_suite (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E51: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 64 bytes in 1 blocks are still reachable in loss record 28 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x402F78: emalloc (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x402982: srunner_create (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E61: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 120 bytes in 1 blocks are possibly lost in loss record 29 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x4A9590B: getdelim (iogetdelim.c:62)
+==18259==    by 0x402200: check_words (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401BF7: test_check_words_normal (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x404EB5: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 280 bytes in 5 blocks are possibly lost in loss record 30 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x4020C7: load_dictionary (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401BAF: test_check_words_normal (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x404EB5: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 552 bytes in 1 blocks are still reachable in loss record 31 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x4A944BB: fdopen@@GLIBC_2.2.5 (iofdopen.c:122)
+==18259==    by 0x4034C7: open_tmp_file (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x40355B: setup_pipe (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x4035BC: receive_test_result (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x404B41: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 6,790,280 bytes in 121,255 blocks are indirectly lost in loss record 32 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x4020C7: load_dictionary (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401BAF: test_check_words_normal (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x404EB5: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== 6,895,840 (105,560 direct, 6,790,280 indirect) bytes in 1,885 blocks are definitely lost in loss record 33 of 33
+==18259==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==18259==    by 0x4020C7: load_dictionary (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401BAF: test_check_words_normal (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x404EB5: srunner_run (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259==    by 0x401E76: main (in /home/aa/Documents/Courses/CS9163/temp/CSGY9163-Assignment/test_main)
+==18259== 
+==18259== LEAK SUMMARY:
+==18259==    definitely lost: 105,560 bytes in 1,885 blocks
+==18259==    indirectly lost: 6,790,280 bytes in 121,255 blocks
+==18259==      possibly lost: 400 bytes in 6 blocks
+==18259==    still reachable: 1,167 bytes in 29 blocks
+==18259==         suppressed: 0 bytes in 0 blocks
+==18259== 
+==18259== For lists of detected and suppressed errors, rerun with: -s
+==18259== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+100%: Checks: 2, Failures: 0, Errors: 0
+==18257== 
+==18257== FILE DESCRIPTORS: 3 open at exit.
+==18257== Open file descriptor 2: /dev/pts/1
+==18257==    <inherited from parent>
+==18257== 
+==18257== Open file descriptor 1: /dev/pts/1
+==18257==    <inherited from parent>
+==18257== 
+==18257== Open file descriptor 0: /dev/pts/1
+==18257==    <inherited from parent>
+==18257== 
+==18257== 
+==18257== HEAP SUMMARY:
+==18257==     in use at exit: 0 bytes in 0 blocks
+==18257==   total heap usage: 66 allocs, 66 frees, 28,698 bytes allocated
+==18257== 
+==18257== All heap blocks were freed -- no leaks are possible
+==18257== 
+==18257== For lists of detected and suppressed errors, rerun with: -s
+==18257== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
