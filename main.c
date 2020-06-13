@@ -7,7 +7,6 @@ int main(int argc, char **argv) {
     
     int max_misspelled = 5;
     char *misspelled[max_misspelled];
-    char teststr[5] = "test1";
 
     //create hashtable
     hashmap_t hashtable[HASH_SIZE];
