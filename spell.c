@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <errno.h>
 
 bool check_word(const char* word, hashmap_t hashtable[])
 {
@@ -55,13 +56,18 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[])
    //Initialize hash table
    for (i = 0; i < HASH_SIZE; i++)
    {
-      hashtable[i] = NULL; //??hashtable[i]->word??
+      hashtable[i] = NULL; 
    }
    
    //Open dictionary file
    fp = fopen(dictionary_file, "r");
-   if (fp == NULL){
-      return false;
+  
+   //Added error handling code
+   if (fp == NULL)
+   {
+	printf("Unable to open wordlist file. Exiting program. \n\nValue of errno: %d\n\n", errno);
+	printf("%s\n", strerror(errno));
+	exit(EXIT_FAILURE);
    }
    
    //Source reference for fscanf use: https://stackoverflow.com/questions/16400886/reading-from-a-file-word-by-word
@@ -96,6 +102,14 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[])
    size_t line_buf_size = 0;
    ssize_t line_size;
    char* word;
+
+   //Error handling code to check whether the test file was opened correctly
+   if (fp == NULL)
+   {
+	printf("Unable to open test file. Exiting program. \n\nValue of errno: %d\n\n", errno);
+	printf("%s\n", strerror(errno));
+	exit(EXIT_FAILURE);
+   }
 
    //Get the first line
    line_size = getline(&line, &line_buf_size, fp);
