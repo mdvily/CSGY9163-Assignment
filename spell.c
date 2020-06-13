@@ -6,6 +6,7 @@
 #include <ctype.h>
 #include <errno.h>
 
+
 bool check_word(const char* word, hashmap_t hashtable[])
 {
    int i = 0;
