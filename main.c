@@ -8,10 +8,6 @@ int main(int argc, char **argv) {
     char *misspelled[max_misspelled];
     char teststr[5] = "test1";
 
-    printf("\nIn main.c ... strlen(teststr) = %d\n\n", strlen(teststr));
-
-    printf("Welcome!\n\n...Running spell check...\n\n");
-    
     //create hashtable
     hashmap_t hashtable[HASH_SIZE];
 
