@@ -96,7 +96,6 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[])
 
 int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[])
 {
-   int test;
    int num_misspelled = 0;
    //Source reference for getline() usage: https://riptutorial.com/c/example/8274/get-lines-from-a-file-using-getline--
    char* line = NULL;
